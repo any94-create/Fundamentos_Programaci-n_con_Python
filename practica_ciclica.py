@@ -34,48 +34,86 @@
 # promedio = suma_notas / 5
 # print(f"Su promedio es: {promedio}")
 
-#2. Numeros pares
+#3. Tabla de multiplicar
 
+# Pedir un número al usuario
+numero = int(input("Ingrese un número: "))
 
-# print("¡Bienvenido al juego del número secreto! \n Tiene 3 intentos para adivinar el numero oculto \n")
+print(f"Tabla de multiplicar del {numero}:")
 
-# numero_secreto = 7
-
-# intento = int(input("Te quedan 3 intentos. Ingrese un numero: "))
-
-# while intento != numero_secreto: 
-#     print("Incorrecto. !Intenta de nuevo¡ \n")
-    
-#     intento = int(input("Te quedan 2 intentos. Ingrese un numero: "))
-
-# #while intento != numero_secreto:
-#     print("Incorrecto. !Intenta de nuevo¡ \n")
-     
-#     intento = int(input("Te queda 1 intento. Ingrese un numero: "))
-#     print("Te quedaste sin intentos. El número secreto era: 7")    
-
-# print("¡Adivinaste el número oculto!")
-
-
-print("¡Bienvenido al juego del número secreto! \n Tiene 3 intentos para adivinar el numero oculto \n")
-
+# Bucle del 1 al 10 para mostrar la tabla
+for i in range(1, 11):
+    resultado = numero * i
+    print(f"{numero} x {i} = {resultado}")
+# Adivina el numero secreto
 numero_secreto = 7
 total_intentos = 3
 
-numero = int(input("Te quedan 3 intentos. Ingrese un numero: "))
-if numero != numero_secreto and total_intentos == 3:
-    print("Incorrecto. !Intenta de nuevo¡ \n")
+print("¡Bienvenido al juego del número secreto! \n")
 
-    numero = int(input("Te quedan 2 intentos. Ingrese un numero: "))
-elif numero != numero_secreto and total_intentos == 2:
-    print("Incorrecto. !Intenta de nuevo¡ \n")
+print("Tiene 3 intentos para adivinar el numero oculto \n")
+
+#Bucle para controlar los intentos
+
+for intentos_restantes in range(3, 0, -1):
+# Solicitar el número al usuario
+    intento = int(input(f"Te quedan {intentos_restantes} intentos. Ingresa tu número: "))
     
-elif numero != numero_secreto and total_intentos == 1:
-    numero = int(input("Te queda 1 intento. Ingrese un numero: "))
-    
-elif numero > total_intentos:  
-    print("Te quedaste sin intentos. El número secreto era: 7 \n")    
-    
+    # Verificar si acertó
+    if intento == numero_secreto:
+        print("¡Felicidades! ¡Adivinaste el número secreto!")
+        break
+
+    else:
+        # Si aún le quedan intentos, mostrar mensaje de fallo
+        if intentos_restantes > 1:
+            print("Incorrecto, ¡intenta de nuevo!\n")
+
 else:
-    numero == numero_secreto
-    print("¡Adivinaste el número oculto!")
+    # Este bloque ejecuta solo si el bucle terminó normalmente sin un 'break'
+    print(f"\nTe quedaste sin intentos. El número secreto era {numero_secreto}.")
+    
+#Calculadora de operaciones basicas infinitas
+
+while True:
+    # Desplegar el menú de opciones por pantalla
+    print("--- CALCULADORA DE OPERACIONES BÁSICAS ---")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicación")
+    print("4. División")
+    print("5. Salir")
+    
+    opcion = input("Selecciona una opción (1-5): ")
+   #print()  # Espacio en blanco para orden
+
+    # Validar si el usuario decide salir del ciclo infinito
+    if opcion == "5":
+        print("¡Hasta luego!")
+        break
+        
+    # Verificar que sea una opción válida antes de pedir los números
+    if opcion in ["1", "2", "3", "4"]:
+        # Pedir los 2 números al usuario y convertirlos a flotantes
+        num1 = float(input("Ingresa el primer número: "))
+        num2 = float(input("Ingresa el segundo número: "))
+        
+        # Evaluar la operación seleccionada
+        if opcion == "1":
+            resultado = num1 + num2
+            print(f"\nResultado de la suma: {num1} + {num2} = {resultado}\n")
+        elif opcion == "2":
+            resultado = num1 - num2
+            print(f"\nResultado de la resta: {num1} - {num2} = {resultado}\n")
+        elif opcion == "3":
+            resultado = num1 * num2
+            print(f"\nResultado de la multiplicación: {num1} * {num2} = {resultado}\n")
+        elif opcion == "4":
+            # Validación simple para evitar la división por cero
+            if num2 != 0:
+                resultado = num1 / num2
+                print(f"\nResultado de la división: {num1} / {num2} = {resultado}\n")
+            else:
+                print("\nError: No se puede dividir entre cero.\n")
+    else:
+        print("Opción no válida. Por favor, intenta de nuevo.\n")
