@@ -1,0 +1,4 @@
+# FUNCIONES - BLOQUE D CODIGO QUE PUEDE SER REUTILIZADO
+
+def saludar():
+    print("HOLA MUNDO")
