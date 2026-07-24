@@ -11,9 +11,9 @@ class Telefono:
     def mostrar_informacion(self):
         print(f"Marca: {self.marca} \nModelo: {self.modelo} \nPrecio: {self.precio} \n")
     
-telefono1 = Telefono("Samsung", "S26 Ultra", "$1,300")
-telefono2 = Telefono("Iphone", "17 Pro Max", "$1,600")
-telefono3 = Telefono("Honor", "Magig 8 Lite", "$420")
+telefono1 = Telefono("Samsung", "S26 Ultra", 1,300)
+telefono2 = Telefono("Iphone", "17 Pro Max", 1,600)
+telefono3 = Telefono("Honor", "Magig 8 Lite", 420)
 
 telefono1.mostrar_informacion()
 telefono2.mostrar_informacion()
@@ -65,16 +65,43 @@ class Empleado:
         self.salario = salario
     
     def mostrar_datos(self):
-        print(f"Nombre: {self.nombre} \nCargo: {self.cargo} \nSalario: {self.salario} \n")
+        print(f"Nombre Empleado: {self.nombre} \nCargo: {self.cargo} \nSalario: $ {self.salario} \n")
         
     
-empleado1 = Empleado("Roberto Jose Lagos Calero", "Gerente", "$1500")
-empleado2 = Empleado("Elena Maria Rosales Cruz", "Secretaria", "$900")
-empleado3 = Empleado("Miguel Antonio Gonzales Tercero", "Conductor", "$500")
+empleado1 = Empleado("Roberto Jose Lagos Calero", "Gerente", 1500)
+empleado2 = Empleado("Elena Maria Rosales Cruz", "Secretaria", 900)
+empleado3 = Empleado("Miguel Antonio Gonzales Tercero", "Conductor", 500)
 
 empleado1.mostrar_datos()
 empleado2.mostrar_datos()
 empleado3.mostrar_datos()
 
 #----------------------------- 4. ESTADO DE UNA COMPUTADORA ----------------------------------
+
+class Computadora:
+    
+    def __init__(self, marca, ram, procesador):
+        
+        self.marca = marca
+        self.ram = ram
+        self.procesador = procesador
+        self.encendida = False
+    
+    def encender(self):
+        self.encendida =True
+        print(f"La computadora marca: {self.marca} se ha encendido \n")
+        
+    def apagar(self):
+        self.encendida =False
+        print(f"La computadora marca: {self.marca} se ha apagado \n")
+
+
+pc = Computadora("Lenovo", "16 GB", "Ryzen 7")
+
+
+pc.encender()
+pc.apagar()
+
+#----------------------------- BLOQUE # 2 CONSTRUCTORES --------------------------------------
+#----------------------------- 5. INFORMACIÓN DE VEHÍCULIOS ----------------------------------
 
