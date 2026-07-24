@@ -126,7 +126,7 @@ vehiculo1.mostrar()
 vehiculo2.mostrar()
 vehiculo3.mostrar()
 
-#----------------------------- 5. REGISTRO DE ESTUDIANTES ----------------------------------
+#----------------------------- 6. REGISTRO DE ESTUDIANTES ----------------------------------
 
 class Estudiante:
     
@@ -144,4 +144,75 @@ estudiante1 = Estudiante("Juan Carlos Rivera Munguia", "Administracion de empres
 
 estudiante1.mostrar_informacion()
 
-#----------------------------- 6. REGISTRO DE ESTUDIANTES ----------------------------------
+#----------------------------- 7. CONTROL DE PRODUCTOS ----------------------------------
+
+class Producto:
+    
+    def __init__(self, nombre, precio, stock):
+        
+        self.nombre = nombre
+        self.precio = precio
+        self.stock = stock
+
+    def mostrar(self):
+        print(f"Nombre: {self.nombre} \nPrecio: {self.precio}\nStock: {self.stock} \n")
+        
+    def vender(self, cantidad):
+        if cantidad <= self.stock:
+            self.stock -= cantidad
+        
+            print(f"Venta exitosa: Se vendieron {cantidad} unidades de {self.nombre}.")
+
+        else:
+            print(f"Error: No hay suficiente stock de {self.nombre}. Stock disponible: {self.stock}")
+   
+
+# 1. Registrar el producto
+producto = Producto("Laptop", 800, 10)
+
+# 2. Mostrar la información inicial
+producto.mostrar()  # Stock: 10
+
+# 3. Realizar una venta válida
+producto.vender(3)  # Reduce el stock en 3
+
+# 4. Mostrar el stock actualizado
+producto.mostrar()  # Stock: 7
+
+# 5. Intentar una venta sin stock suficiente
+producto.vender(12) # Muestra error
+
+#----------------------------- 8. MASCOTAS DE UNA VETERINARIA ----------------------------------
+class Mascota:
+    
+    def __init__(self, nombre, especie, edad):
+        
+        self.nombre = nombre
+        self.especie = especie
+        self.edad = edad
+
+    def presentarse(self):
+        print(f"Nombre: {self.nombre} \nEspecie: {self.especie}\nEdad: {self.edad} \n")
+        
+mascota = Mascota("Bambi", "Perro", 2)
+
+mascota.presentarse()
+
+#----------------------------- BLOQUE #3 ENCAPSULACIÓN ----------------------------------
+#----------------------------- 9. CUENTA BANCARIA CONSULTA ----------------------------------
+
+class Cuenta_Bancaria:
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.__saldo = saldo
+        
+    def consultar_saldo(self):
+        return self.__saldo
+
+cuenta1 = Cuenta_Bancaria("Ernesto Jose Reyes Lopez", 100000)
+
+print(cuenta1.consultar_saldo()) 
+
+#----------------------------- 10. CUENTA BANCARIA DEPOSITO ----------------------------------
+
+
