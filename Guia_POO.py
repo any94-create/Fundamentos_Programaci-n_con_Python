@@ -105,3 +105,43 @@ pc.apagar()
 #----------------------------- BLOQUE # 2 CONSTRUCTORES --------------------------------------
 #----------------------------- 5. INFORMACIÓN DE VEHÍCULIOS ----------------------------------
 
+class Vehiculo:
+    
+    def __init__(self, marca, modelo, año):
+        
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+
+    def mostrar(self):
+        print(f"Su vehiculo es:\nMarca: {self.marca} \nModelo: {self.modelo}\nAño: {self.año} \n")
+        
+
+vehiculo1 = Vehiculo("Toyota", "Corolla", 2025)
+vehiculo2 = Vehiculo("Chevrolet", "ONIX", 2022)
+vehiculo3 = Vehiculo("KIA", "Picanto", 2024)
+
+
+vehiculo1.mostrar()
+vehiculo2.mostrar()
+vehiculo3.mostrar()
+
+#----------------------------- 5. REGISTRO DE ESTUDIANTES ----------------------------------
+
+class Estudiante:
+    
+    def __init__(self, nombre, carrera, promedio):
+        
+        self.nombre = nombre
+        self.carrera = carrera
+        self.promedio = promedio
+
+    def mostrar_informacion(self):
+        print(f"Nombre: {self.nombre} \nCarrera: {self.carrera}\nPromedio: {self.promedio} \n")
+        
+
+estudiante1 = Estudiante("Juan Carlos Rivera Munguia", "Administracion de empresa", "90%")
+
+estudiante1.mostrar_informacion()
+
+#----------------------------- 6. REGISTRO DE ESTUDIANTES ----------------------------------
